@@ -2,6 +2,8 @@ package br.com.jdev.servlets;
 
 import java.io.IOException;
 
+import br.com.jdev.model.Login;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -21,8 +23,17 @@ public class ServletLogin extends HttpServlet {
 	/* Recebe os dados enviados por um formulário */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println(request.getParameter("nome"));
-		System.out.println(request.getParameter("idade"));
+		String login = request.getParameter("login");
+		String senha = request.getParameter("senha");
+		
+		if (login != null && !login.isEmpty() && senha != null && !senha.isEmpty()) {
+			Login obj = new Login();
+			obj.setLogin(login);
+			obj.setSenha(senha);			
+		} else {
+			RequestDispatcher redirecionar = request.getRequestDispatcher("index.jsp");
+			request.setAttribute("msg", "Informe o login e senha corretamente");
+			redirecionar.forward(request, response);
+		}
 	}
-
 }

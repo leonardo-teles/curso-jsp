@@ -7,12 +7,28 @@
 	</head>
 	
 	<body>
+	
+		<h4>${msg}</h4>
 		<form action="ServletLogin" method="post">
-			<input type="text" name="nome">
-			<br/>
-			<input type="text" name="idade">
-			<br/>
-			<input type="submit" value="Enviar">
+			<table>
+				<tr>
+					<td>
+						<label>Login</label>
+						<input type="text" name="login">					
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Senha</label>
+						<input type="password" name="senha">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" value="Enviar">
+					</td>
+				</tr>
+			</table>
 		</form>
 	</body>
 </html>
