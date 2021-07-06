@@ -14,6 +14,14 @@
   <name>curso-jsp</name>
   <description>Curso de JSP e Servlets JDev Treinamentos</description>
   
+  <dependencies>
+		<dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>42.2.22</version>
+		</dependency>
+  </dependencies>
+  
   <build>
     <plugins>
     
